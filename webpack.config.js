@@ -16,7 +16,7 @@ module.exports = {
         use: [
           {
             loader: "html-loader",
-            options: { minimize: ture },
+            options: { minimize: true }, //minimize 옵션이 켜져있어서 한줄로 표시됨. false를 하면 줄바꿈되서 index.html이 생성.
           },
         ],
       },
@@ -24,8 +24,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      fliename: "index.html",
+      template: "./public/index.html", //public/index.html 파일을 읽는다
+      fliename: "index.html", //output으로 출력할 파일은 index.html 파일이다
     }),
   ],
 };
