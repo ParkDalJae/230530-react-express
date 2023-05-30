@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -8,4 +9,23 @@ module.exports = {
     path: path.resolve(__dirname + "/build"),
   },
   mode: "none", //mode는 빌드 옵션. production은 최적화되어 빌드가 되고, development는 빠르게 빌드하고, none는 아무 기능 없이 웹팩으로 빌드함
+  module: {
+    rules: [
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: { minimize: ture },
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+      fliename: "index.html",
+    }),
+  ],
 };
