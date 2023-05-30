@@ -1,7 +1,7 @@
 # 230530-react-express
 
-npm init -y
-npm i express
+npm init -y  
+npm i express  
 server.js
 
 ## const express = require("express");
